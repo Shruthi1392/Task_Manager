@@ -1,5 +1,5 @@
 "use client";
-
+import TaskForm from './components/TaskForm.jsx';
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -15,6 +15,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
       <h1 className="text-3xl font-bold mb-6">Task Manager ✅</h1>
+      {/* 👇 Pass a prop so TaskForm can report the new task back */}
+      <TaskForm onAdd={(task) => setTasks((prev) => [...prev, task])} />
       <ul className="space-y-2 w-full max-w-md">
         {tasks.map((task) => (
           <li
