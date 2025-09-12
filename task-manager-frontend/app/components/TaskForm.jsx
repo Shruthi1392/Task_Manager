@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 export default function TaskForm({onAdd}) {
     const [title, setTitle] = useState('');
+    
 
     // To prevent the default form submission behavior (which would refresh the page)
     const handleSubmit = async (e) => {
